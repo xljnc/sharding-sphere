@@ -1,0 +1,16 @@
+schema: book
+
+datasource:
+  ds0: !!com.alibaba.druid.pool.DruidDataSource
+    url:
+    username:
+    password:
+    driverClassName: com.mysql.jdbc.Driver
+
+shardingRule:
+  defaultDataSourceName: ds0
+  tables:
+
+props:
+  sql.show: true
+

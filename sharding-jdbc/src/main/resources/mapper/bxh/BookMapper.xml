@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wt.test.shardingjdbc.book.mapper.BookMapper">
+
+    <resultMap id="bookMap" type="com.wt.test.shardingjdbc.book.entity.Book">
+
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    </sql>
+
+    <select id="select" resultType="com.wt.test.shardingjdbc.book.entity.Book">
+        select
+        <include refid="Base_Column_List"/>
+        from book
+
+    </select>
+
+
+</mapper>
