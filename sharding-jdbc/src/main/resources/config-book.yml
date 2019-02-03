@@ -1,16 +1,16 @@
 schema: book
 
 datasource:
-  ds0: !!com.alibaba.druid.pool.DruidDataSource
-    url:
-    username:
-    password:
+  ds0: !!com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://192.168.154.129:3306?sharding0
+    username: root
+    password: dummy
     driverClassName: com.mysql.jdbc.Driver
-  ds1: !!com.alibaba.druid.pool.DruidDataSource
-    url:
-    username:
-    password:
-    driverClassName: com.mysql.jdbc.Driver
+  ds1: !!com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://192.168.154.129:3306?sharding1
+    username: root
+    password: dummy
+    driverClassName: coHikariDataSourcem.mysql.jdbc.Driver
 
 shardingRule:
   defaultDataSourceName: ds0

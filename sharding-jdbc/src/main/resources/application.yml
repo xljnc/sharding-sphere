@@ -1,5 +1,8 @@
 debug: true
 
+app:
+  id: sharding-jdbc
+
 spring:
   profiles:
     active: local

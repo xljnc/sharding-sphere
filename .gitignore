@@ -27,3 +27,4 @@
 /.idea/
 /sharding-jdbc/.mvn/
 
+/sharding-jdbc/src/main/resources/config-book.yml
