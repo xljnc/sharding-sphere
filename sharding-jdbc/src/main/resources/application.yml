@@ -3,6 +3,14 @@ debug: true
 app:
   id: sharding-jdbc
 
+apollo:
+  meta: http://192.168.154.129:8080
+  bootstrap:
+    enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
 spring:
   profiles:
     active: local
