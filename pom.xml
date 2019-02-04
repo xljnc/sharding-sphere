@@ -18,6 +18,7 @@
 
     <modules>
         <module>sharding-jdbc</module>
+        <module>apollo-client</module>
     </modules>
 
     <properties>

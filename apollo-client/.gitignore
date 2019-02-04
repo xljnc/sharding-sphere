@@ -18,14 +18,8 @@
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-/.mvn/
-/.idea/
-/sharding-jdbc/.mvn/
-
-/sharding-jdbc/src/main/resources/config-book.yml
-/apollo-client/.mvn/
+/build/
