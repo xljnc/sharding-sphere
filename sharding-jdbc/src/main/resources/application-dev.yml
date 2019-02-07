@@ -1,0 +1,17 @@
+sharding:
+  jdbc:
+    datasource:
+      ds0:
+        driverClassName: com.mysql.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.154.130:3306/sharding0
+        username: root
+        password:
+      ds1:
+        driverClassName: com.mysql.jdbc.Driver
+        jdbcUrl: jdbc:mysql://192.168.154.130:3306/sharding1
+        username: root
+        password:
+    config:
+      props:
+        sql:
+          show: true

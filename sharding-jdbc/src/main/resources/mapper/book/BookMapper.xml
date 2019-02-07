@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wt.test.shardingjdbc.book.mapper.BookMapper">
+
+    <resultMap id="bookMap" type="com.wt.test.shardingjdbc.book.entity.Book">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="isbn" property="isbn" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="DOUBLE"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="category" property="category" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+         id, name, isbn, price, author, category
+    </sql>
+
+    <insert id="insert" parameterType="com.wt.test.shardingjdbc.book.entity.Book" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into book
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+
+            <if test="name != null and name.length()>0">
+                name,
+            </if>
+            <if test="isbn != null and isbn.length()>0">
+                isbn,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="author != null and author.length()>0">
+                author,
+            </if>
+            <if test="category != null and category.length()>0">
+                category,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null and name.length()>0">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="isbn != null and isbn.length()>0">
+                #{isbn,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="author != null and author.length()>0">
+                #{author,jdbcType=VARCHAR},
+            </if>
+            <if test="category != null and category.length()>0">
+                #{category,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="select" resultType="com.wt.test.shardingjdbc.book.entity.Book" resultMap="bookMap">
+        select
+        <include refid="Base_Column_List"/>
+        from book
+        where id = #{id,jdbcType=INTEGER};
+    </select>
+
+    <select id="selectAll" resultType="com.wt.test.shardingjdbc.book.entity.Book" resultMap="bookMap">
+        select
+        <include refid="Base_Column_List"/>
+        from book;
+    </select>
+
+
+</mapper>

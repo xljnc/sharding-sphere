@@ -29,3 +29,4 @@
 
 /sharding-jdbc/src/main/resources/config-book.yml
 /apollo-client/.mvn/
+/sharding-jdbc/src/main/resources/application-local.yml

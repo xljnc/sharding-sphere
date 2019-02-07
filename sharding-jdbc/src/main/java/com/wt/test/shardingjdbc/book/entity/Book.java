@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class Book {
 
-    private Integer id;
+    private Long id;
     private String name;
-    private String ISBN;
+    private String isbn;
     private Double price;
     private String author;
-
+    private String category;
 }
